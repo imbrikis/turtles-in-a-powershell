@@ -2,5 +2,5 @@
 
 while ($true) {
   Start-Sleep -m 2000
-  nmap -sn -PR xx.xx.xx.xx | Out-File -FilePath "C:\pingResult.txt" -Append # replace 'xx' with target IP address
+  nmap -sn -PR xx.xx.xx.xx | Tee-Object "C:\pingResult.txt" -Append # outputs to shell and writes to a file - replace 'xx' with target IP address
 }
